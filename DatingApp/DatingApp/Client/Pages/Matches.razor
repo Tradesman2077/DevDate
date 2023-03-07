@@ -1,0 +1,18 @@
+﻿@page "/matches"
+@using DatingApp.ViewModels
+@inject HttpClient HttpClient
+@inject MatchesViewModel _matchesViewModel
+
+<h3>Matches</h3>
+@if(_matchesViewModel.Matches != null && _matchesViewModel.Matches.Count > 0){
+    @foreach (var user in _matchesViewModel.Matches)
+    {
+        <div class="col-12">
+            <div>@user.Username</div>
+        </div>
+    }
+}
+
+@code {
+    protected override async Task OnInitializedAsync() => await _matchesViewModel.GetMatches();
+}

@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "87a9a63e-c359-4b2f-967b-b3c234d464f6": {
+      "ProjectGuid": "87a9a63e-c359-4b2f-967b-b3c234d464f6",
+      "DisplayName": "DatingApp.Server",
+      "ColorIndex": 0
+    },
+    "fd57d761-7009-4749-8d3f-b24d5703ebe7": {
+      "ProjectGuid": "fd57d761-7009-4749-8d3f-b24d5703ebe7",
+      "DisplayName": "DatingApp.Client",
+      "ColorIndex": 1
+    },
+    "f654e0a4-362d-4feb-be80-42a3be9d1baa": {
+      "ProjectGuid": "f654e0a4-362d-4feb-be80-42a3be9d1baa",
+      "DisplayName": "DatingApp.Shared",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

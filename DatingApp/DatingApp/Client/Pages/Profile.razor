@@ -1,0 +1,44 @@
+@page "/profile"
+@using DatingApp.ViewModels
+@using System.Security.Claims
+@inject HttpClient HttpClient
+@inject ProfileViewModel _profileViewModel
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
+
+<PageTitle>Profile</PageTitle>
+<h1>Profile</h1>
+
+<div class="col-12">
+    <input type="text" @bind-value="_profileViewModel.Username" class="form-control" placeholder="Username">
+    <br/>
+    <input type="text" @bind-value="_profileViewModel.City" class="form-control" placeholder="Location">
+    <br/>
+    <input type="text" @bind-value="_profileViewModel.FavouriteLanguage" class="form-control" placeholder="Favourite language">
+    <br/>
+
+
+</div>
+
+@code
+{
+     [CascadingParameter]
+    public Task<AuthenticationState> authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync() 
+    {
+        var authState = await authenticationState;//_authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if(user.Identity.IsAuthenticated)
+        {
+            var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            _profileViewModel.Id = Convert.ToInt64(claim?.Value) ;
+            await _profileViewModel.GetUser();
+        }
+        else
+        {
+            _navigationManager.NavigateTo("/");
+        }
+    }
+}

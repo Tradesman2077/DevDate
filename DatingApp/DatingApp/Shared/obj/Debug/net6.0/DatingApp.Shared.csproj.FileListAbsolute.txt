@@ -1,0 +1,12 @@
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\bin\Debug\net6.0\DatingApp.Shared.deps.json
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\bin\Debug\net6.0\DatingApp.Shared.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\bin\Debug\net6.0\ref\DatingApp.Shared.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\bin\Debug\net6.0\DatingApp.Shared.pdb
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.csproj.AssemblyReference.cache
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.AssemblyInfoInputs.cache
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.AssemblyInfo.cs
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\ref\DatingApp.Shared.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Shared\obj\Debug\net6.0\DatingApp.Shared.pdb
