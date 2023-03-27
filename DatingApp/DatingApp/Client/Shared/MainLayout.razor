@@ -13,12 +13,12 @@
     <main>
         <AuthorizeView>
         <Authorized>
-        <div class="top-row">
+            <div class="top-row">
                 <h4><b>Logged in as : @context.User.Identity.Name</b></h4> &nbsp;
                 <button class="btn btn-danger" @onclick="LogoutUser">Logout</button>
-        </div>
+            </div>
         </Authorized>
-    </AuthorizeView>
+        </AuthorizeView>
         <article class="content px-4">
             @Body
         </article>
@@ -31,9 +31,6 @@
         _navigationManager.NavigateTo("/", true);
     }
 
-    private void LoginUser()
-    {
-        _navigationManager.NavigateTo("/", true);
-    }
+
 
 }

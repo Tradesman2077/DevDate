@@ -1,0 +1,28 @@
+@page "/register"
+@using DatingApp.ViewModels
+@inject NavigationManager _navigationManager
+@inject RegisterViewModel _registerViewModel
+
+<h2><b>Register</b></h2>
+<hr>
+<div class="col-6">
+    <input type="text" @bind="_registerViewModel.Username" class="form-control" placeholder="Username" required>
+</div>
+<br/>
+<div class="col-6">
+    <input type="password" @bind="_registerViewModel.Password" class="form-control" placeholder="Password" required>
+</div>
+<div class="col-6">
+    <input type="password" @bind="_registerViewModel.ReenterPassword" class="form-control" placeholder="Re-enter Password" required>
+</div>
+<div class="col-6">
+    <button class="btn btn-primary mt-3" @onclick="RegisterUser">Register</button>
+</div>
+
+@code{
+    public async Task RegisterUser()
+    {
+        await _registerViewModel.RegisterUser();
+        _navigationManager.NavigateTo("/profile", true);
+    }
+}

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dLboyOi9RHSCvO0c8Qq3OszIunBz5gdjzQYeEFfuvDv0BC2E5+I4d5/+LEly1HPE3+/S4K/gT7jbQex3WIBxFg==",
+  "dgSpecHash": "28LER/nYvuW6Yqgct+tvIekn5tnBdiFUy6OQ9XzYizBna2xkn0LEkmAB21wGH1SnQssUdAKVDf3wFRGhvLLhjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\DatingApp.Client.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,7 @@
     "C:\\Users\\chris\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.14\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.14.nupkg.sha512"
+    "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.15\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.15.nupkg.sha512"
   ],
   "logs": []
 }

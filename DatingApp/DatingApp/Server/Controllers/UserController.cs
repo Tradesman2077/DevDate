@@ -13,7 +13,6 @@ namespace DatingApp.Server.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        
         private readonly ILogger<UserController> _logger;
         private readonly DatingappContext _context;
 
@@ -22,7 +21,6 @@ namespace DatingApp.Server.Controllers
             _logger = logger;
             _context = context;
         }
-
         [HttpGet("getusers")]
         public IEnumerable<User> Get()
         {
@@ -52,17 +50,19 @@ namespace DatingApp.Server.Controllers
             userToUpdate.Username = user.Username;
             userToUpdate.City = user.City;
             userToUpdate.FavouriteLanguage = user.FavouriteLanguage;
-
+            userToUpdate.PhotoUrl = user.PhotoUrl;
             await _context.SaveChangesAsync();
 
             return await Task.FromResult(user);
         }
         ///AUTH
-        
         [HttpPost("loginuser")]
         public async Task<ActionResult<User>> LoginUser(User user)
         {
-            user.Password = Utility.Encrypt(user.Password);
+            var encrytedPassword = Utility.Encrypt(user.Password);
+            System.Console.WriteLine(encrytedPassword);
+            user.Password = encrytedPassword;
+            
             User loggedInUser = await _context.Users.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefaultAsync();
 
             if (loggedInUser != null)
@@ -76,7 +76,6 @@ namespace DatingApp.Server.Controllers
                 //Sign In User
                 await HttpContext.SignInAsync(claimsPrincipal);
             }
-
             return await Task.FromResult(loggedInUser);
         }
         [HttpGet("getcurrentuser")]
@@ -89,6 +88,14 @@ namespace DatingApp.Server.Controllers
             }
             return await Task.FromResult(currentUser);
         }
+        //[HttpPost("registeruser")]
+        //public async Task<ActionResult<User>> RegisterUser(User newUser)
+        //{
+           //var encrytedPassword = Utility.Encrypt(newUser.Password);
+            
+            //User currentUser = new();
+
+        //}
         [HttpGet("logoutuser")]
         public async Task<ActionResult<String>> LogOutUser()
         {

@@ -9,22 +9,40 @@
 <PageTitle>Profile</PageTitle>
 <h1>Profile</h1>
 
-<div class="col-12">
-    <input type="text" @bind-value="_profileViewModel.Username" class="form-control" placeholder="Username">
-    <br/>
-    <input type="text" @bind-value="_profileViewModel.City" class="form-control" placeholder="Location">
-    <br/>
-    <input type="text" @bind-value="_profileViewModel.FavouriteLanguage" class="form-control" placeholder="Favourite language">
-    <br/>
-
-
+<div class="row col-12">
+    <div class="col-4">
+        <img src="@_profileViewModel.PhotoUrl" style="width: 250px; height: 250px;">
+        <br>
+        <InputFile OnChange="@OnInputFileChanged" ></InputFile>
+    </div>
+    <br>
+    <div class="col-8">
+        <input type="text" @bind-value="_profileViewModel.Username" class="form-control" placeholder="Username">
+        <br/>
+        <input type="text" @bind-value="_profileViewModel.City" class="form-control" placeholder="Location">
+        <br/>
+        <input type="text" @bind-value="_profileViewModel.FavouriteLanguage" class="form-control" placeholder="Favourite language">
+        <br/>
+        <button type="submit" @onclick="_profileViewModel.UpdateUser">Update profile</button>
+    </div>
 </div>
+<br>
 
 @code
 {
      [CascadingParameter]
     public Task<AuthenticationState> authenticationState { get; set; }
 
+    private async Task OnInputFileChanged(InputFileChangeEventArgs inputFileChangeEvent)
+    {
+        //photo upload
+        var file = inputFileChangeEvent.File;
+        var buffer = new byte[file.Size];
+        await file.OpenReadStream().ReadAsync(buffer);
+       _profileViewModel.PhotoUrl = $"data:image/png;base64,{Convert.ToBase64String(buffer)}";
+       System.Console.WriteLine(_profileViewModel.PhotoUrl);
+
+    }
     protected override async Task OnInitializedAsync() 
     {
         var authState = await authenticationState;//_authenticationStateProvider.GetAuthenticationStateAsync();
@@ -41,4 +59,5 @@
             _navigationManager.NavigateTo("/");
         }
     }
+
 }

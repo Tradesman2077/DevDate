@@ -20,13 +20,14 @@ namespace DatingApp.Shared
         public int Age { get; set; }
         public string Email { get; set; }
         public string PhotoUrl { get; set; }
+        public string ReenterPassword { get; set; }
         public List<User> MatchedUsers { get; set; }
 
         public User()
         {
 
         }
-        public User(string username, string password, string bio, string favouriteLanguage, string country, string city, int age, string email)
+        public User(string username, string password, string bio, string favouriteLanguage, string country, string city, int age, string email, string reenterPassword)
         {
             Username = username;
             Password = password;
@@ -37,6 +38,7 @@ namespace DatingApp.Shared
             Age = age;
             Email = email;
             Matches = Matches;
+            ReenterPassword = reenterPassword;
         }
         
     }

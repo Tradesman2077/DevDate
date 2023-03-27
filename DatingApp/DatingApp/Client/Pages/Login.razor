@@ -6,11 +6,11 @@
 <h2><b>Login</b></h2>
 <hr>
 <div class="col-6">
-    <input type="text" @bind="_loginViewModel.Username" class="form-control" placeholder="Username">
+    <input type="text" @bind="_loginViewModel.Username" class="form-control" placeholder="Username" required>
 </div>
 <br/>
 <div class="col-6">
-    <input type="password" @bind="_loginViewModel.Password" class="form-control" placeholder="Password">
+    <input type="password" @bind="_loginViewModel.Password" class="form-control" placeholder="Password" required>
 </div>
 <div class="col-6">
     <button class="btn btn-primary mt-3" @onclick="LoginUser">Login</button>
@@ -21,6 +21,6 @@
     public async Task LoginUser()
     {
         await _loginViewModel.LoginUser();
-        _navigationManager.NavigateTo("/profile",true);
+        _navigationManager.NavigateTo("/profile", true);
     }
 }

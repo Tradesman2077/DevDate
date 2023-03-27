@@ -10,6 +10,7 @@ namespace DatingApp.ViewModels
         public string FavouriteLanguage { get; set; }
         public string City { get; set; }
         public string Country { get; set; }
+        public string PhotoUrl { get; set; }
         private HttpClient _httpClient;
         public ProfileViewModel(){
 
@@ -24,7 +25,9 @@ namespace DatingApp.ViewModels
                 FavouriteLanguage = user.FavouriteLanguage,
                 City = user.City,
                 Country = user.Country,
-                Id = user.Id
+                Id = user.Id,
+                PhotoUrl = user.PhotoUrl
+
             };
         }
         public static implicit operator User(ProfileViewModel user){
@@ -34,19 +37,19 @@ namespace DatingApp.ViewModels
                 FavouriteLanguage = user.FavouriteLanguage,
                 City = user.City,
                 Country = user.Country,
-                Id = user.Id
+                Id = user.Id,
+                PhotoUrl = user.PhotoUrl
             };
         }
 
         public async Task UpdateUser()
         {
             User user = this;
-
+            System.Console.WriteLine(user.Email);
             await _httpClient.PutAsJsonAsync("user/updateuser/" + this.Id, user);
         }
         public async Task GetUser()
         {
-            System.Console.WriteLine(this.Id);
             User? user = await _httpClient.GetFromJsonAsync<User>("user/getuser/" + this.Id);
             LoadUser(user);
         }
@@ -54,6 +57,7 @@ namespace DatingApp.ViewModels
             this.Username = profileViewModel.Username;
             this.City = profileViewModel.City;
             this.FavouriteLanguage = profileViewModel.FavouriteLanguage;
+            this.PhotoUrl = profileViewModel.PhotoUrl;
         }
     }
     

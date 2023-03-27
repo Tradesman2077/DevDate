@@ -18,7 +18,7 @@ public partial class DatingappContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Name=DatingApp");
+        => optionsBuilder.UseSqlite("Name=ConnectionStrings:DatingApp");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
