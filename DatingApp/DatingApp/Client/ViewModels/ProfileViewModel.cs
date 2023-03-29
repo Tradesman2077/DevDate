@@ -45,7 +45,6 @@ namespace DatingApp.ViewModels
         public async Task UpdateUser()
         {
             User user = this;
-            System.Console.WriteLine(user.Email);
             await _httpClient.PutAsJsonAsync("user/updateuser/" + this.Id, user);
         }
         public async Task GetUser()

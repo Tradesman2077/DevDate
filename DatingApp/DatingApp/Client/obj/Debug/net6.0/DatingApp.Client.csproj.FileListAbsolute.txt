@@ -845,3 +845,7 @@ C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\obj\Debug\n
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\obj\Debug\net6.0\build-gz\RIOo62D+.gz
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\obj\Debug\net6.0\build-gz\+GVwtwBs.gz
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\obj\Debug\net6.0\build-gz\YysHlNZd.gz
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.Toast.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.Toast.dll.gz
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\bin\Debug\net6.0\Blazored.Toast.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Client\obj\Debug\net6.0\build-gz\Y8H7Deeb.gz

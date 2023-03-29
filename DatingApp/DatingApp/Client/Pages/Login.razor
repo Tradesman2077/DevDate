@@ -2,7 +2,7 @@
 @using DatingApp.ViewModels
 @inject NavigationManager _navigationManager
 @inject LoginViewModel _loginViewModel
-
+@inject IToastService _toastService
 <h2><b>Login</b></h2>
 <hr>
 <div class="col-6">
@@ -15,12 +15,16 @@
 <div class="col-6">
     <button class="btn btn-primary mt-3" @onclick="LoginUser">Login</button>
 </div>
+<div class="col-6 ">
+    <a href="/register" style="padding-top:2px;">Register here</a>
+</div>
 
 
 @code{
     public async Task LoginUser()
     {
         await _loginViewModel.LoginUser();
+        
         _navigationManager.NavigateTo("/profile", true);
     }
 }

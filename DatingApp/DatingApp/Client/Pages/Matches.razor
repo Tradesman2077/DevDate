@@ -1,18 +1,58 @@
 ﻿@page "/matches"
 @using DatingApp.ViewModels
+@using DatingApp.Client.Models
+@using System.Security.Claims
 @inject HttpClient HttpClient
 @inject MatchesViewModel _matchesViewModel
+@inject NavigationManager _navigationManager
 
 <h3>Matches</h3>
-@if(_matchesViewModel.Matches != null && _matchesViewModel.Matches.Count > 0){
-    @foreach (var user in _matchesViewModel.Matches)
-    {
-        <div class="col-12">
-            <div>@user.Username</div>
+@if(_matchesViewModel.Matches != null && _matchesViewModel?.Matches.Count > 0){
+    @foreach (var match in _matchesViewModel.Matches)
+{
+    System.Console.WriteLine(match.Email);
+<div class="row col-12">
+    <div class="col-2">
+        <img src= "@match.PhotoUrl" style="max-width: 100%; height: auto;">
+        <br>
+    </div>
+    <br>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@match.Username</h5>
+                <p class="card-text">@match.Email</p>
+                <p class="card-text">@match.Bio</p>
+                <p class="card-text">@match.Age</p>
+                <p class="card-text">@match.City</p>
+                <p class="card-text">@match.Country</p>
+            </div>
         </div>
+    </div>
+    <div class="col-4">
+        <a href="" class="btn btn-secondary">Message</a>
+        <button  type="submit" @onclick="() => _matchesViewModel.RemoveMatch(match.Id)" class="btn btn-danger">Remove from contacts</button>
+    </div>
+</div>
+<br>
     }
 }
+@code 
+{
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationState {get; set;}
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationState;
+        var user = authState.User;
 
-@code {
-    protected override async Task OnInitializedAsync() => await _matchesViewModel.GetMatches();
+        if(user.Identity.IsAuthenticated)
+        {
+            //ListOfMatches = await _matchesViewModel.GetMatches();
+            var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            _matchesViewModel.Id = Convert.ToInt64(claim?.Value) ;
+            await _matchesViewModel.GetMatches();
+        }
+        else _navigationManager.NavigateTo("/");        
+    }
 }

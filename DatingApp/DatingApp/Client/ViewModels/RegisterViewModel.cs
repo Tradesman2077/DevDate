@@ -8,6 +8,13 @@ namespace DatingApp.ViewModels
         public string Username { get; set; }
         public string Password { get; set; }
         public string ReenterPassword { get; set; }
+        public string Email { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Bio { get; set; }
+        public string FavouriteLanguage { get; set; }
+
+        public int Age { get; set; }
 
         private HttpClient _httpClient;
         public RegisterViewModel()
@@ -29,7 +36,13 @@ namespace DatingApp.ViewModels
             {
                 Username = user.Username,
                 Password = user.Password,
-                ReenterPassword = user.ReenterPassword
+                ReenterPassword = user.ReenterPassword,
+                Email = user.Email,
+                Age = user.Age,
+                Country = user.Country,
+                City = user.City,
+                FavouriteLanguage = user.FavouriteLanguage,
+                Bio = user.Bio
             };
         }
         public static implicit operator User(RegisterViewModel registerViewModel )
@@ -38,7 +51,13 @@ namespace DatingApp.ViewModels
             {
                 Username = registerViewModel.Username,
                 Password = registerViewModel.Password,
-                ReenterPassword = registerViewModel.ReenterPassword
+                ReenterPassword = registerViewModel.ReenterPassword,
+                Email = registerViewModel.Email,
+                Age = registerViewModel.Age,
+                Country = registerViewModel.Country,
+                City = registerViewModel.City,
+                FavouriteLanguage = registerViewModel.FavouriteLanguage,
+                Bio = registerViewModel.Bio
             };
         }
     }

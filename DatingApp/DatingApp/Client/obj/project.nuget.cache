@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "28LER/nYvuW6Yqgct+tvIekn5tnBdiFUy6OQ9XzYizBna2xkn0LEkmAB21wGH1SnQssUdAKVDf3wFRGhvLLhjA==",
+  "dgSpecHash": "pdALUWD2uchLLQ3C1kkobQVCxu0C2rXRk5HcB95uZ41Iih1bUx2egopGTGllxk0J3GVmjELkDhFI/KjS3xczSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\DatingApp.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chris\\.nuget\\packages\\blazored.toast\\4.1.0\\blazored.toast.4.1.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.14\\microsoft.aspnetcore.authorization.6.0.14.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.14\\microsoft.aspnetcore.components.6.0.14.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.14\\microsoft.aspnetcore.components.analyzers.6.0.14.nupkg.sha512",

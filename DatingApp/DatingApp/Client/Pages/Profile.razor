@@ -3,7 +3,7 @@
 @using System.Security.Claims
 @inject HttpClient HttpClient
 @inject ProfileViewModel _profileViewModel
-@inject AuthenticationStateProvider _authenticationStateProvider
+@inject IToastService _toastService
 @inject NavigationManager _navigationManager
 
 <PageTitle>Profile</PageTitle>
@@ -11,16 +11,21 @@
 
 <div class="row col-12">
     <div class="col-4">
-        <img src="@_profileViewModel.PhotoUrl" style="width: 250px; height: 250px;">
+        <img src="@_profileViewModel.PhotoUrl" style="max-width: 100%; height: auto;">
         <br>
-        <InputFile OnChange="@OnInputFileChanged" ></InputFile>
+        <div class="input_container" >
+            <InputFile OnChange="@OnInputFileChanged" id="fileUpload"></InputFile>
+        </div>
     </div>
     <br>
     <div class="col-8">
+        <label for="username">UserName:</label>
         <input type="text" @bind-value="_profileViewModel.Username" class="form-control" placeholder="Username">
         <br/>
+        <label for="city">City:</label>
         <input type="text" @bind-value="_profileViewModel.City" class="form-control" placeholder="Location">
         <br/>
+        <label for="Favourite Language">Favourite language:</label>
         <input type="text" @bind-value="_profileViewModel.FavouriteLanguage" class="form-control" placeholder="Favourite language">
         <br/>
         <button type="submit" @onclick="_profileViewModel.UpdateUser">Update profile</button>
@@ -40,7 +45,6 @@
         var buffer = new byte[file.Size];
         await file.OpenReadStream().ReadAsync(buffer);
        _profileViewModel.PhotoUrl = $"data:image/png;base64,{Convert.ToBase64String(buffer)}";
-       System.Console.WriteLine(_profileViewModel.PhotoUrl);
 
     }
     protected override async Task OnInitializedAsync() 

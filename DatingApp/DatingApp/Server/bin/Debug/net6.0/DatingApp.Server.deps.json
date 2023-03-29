@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "DatingApp.Server/1.0.0": {
         "dependencies": {
+          "Blazored.Toast": "4.1.0",
           "Bricelam.EntityFrameworkCore.Pluralizer": "1.0.0",
           "DatingApp.Client": "1.0.0",
           "DatingApp.Shared": "1.0.0",
@@ -17,6 +18,19 @@
         },
         "runtime": {
           "DatingApp.Server.dll": {}
+        }
+      },
+      "Blazored.Toast/4.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.14",
+          "Microsoft.AspNetCore.Components.Web": "6.0.13",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Blazored.Toast.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Bricelam.EntityFrameworkCore.Pluralizer/1.0.0": {
@@ -643,6 +657,7 @@
       },
       "DatingApp.Client/1.0.0": {
         "dependencies": {
+          "Blazored.Toast": "4.1.0",
           "DatingApp.Shared": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "6.0.14",
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.13",
@@ -665,6 +680,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Blazored.Toast/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k12tFBnMMU67bPoBKLTuR2POcYOz02UtT8Lzyeu8fMv587nO8VaWqFfRMJ8Hxkb1SbxL8lY2WiK9tWAZ934khQ==",
+      "path": "blazored.toast/4.1.0",
+      "hashPath": "blazored.toast.4.1.0.nupkg.sha512"
     },
     "Bricelam.EntityFrameworkCore.Pluralizer/1.0.0": {
       "type": "package",

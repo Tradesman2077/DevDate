@@ -12,9 +12,19 @@
 <div class="col-6">
     <input type="password" @bind="_registerViewModel.Password" class="form-control" placeholder="Password" required>
 </div>
+<br/>
 <div class="col-6">
     <input type="password" @bind="_registerViewModel.ReenterPassword" class="form-control" placeholder="Re-enter Password" required>
 </div>
+<br/>
+<div class="col-6">
+    <input type="email" @bind="_registerViewModel.Email" class="form-control" placeholder="Email" required>
+</div>
+<br/>
+<div class="col-6">
+    <input type="country" @bind="_registerViewModel.Country" class="form-control" placeholder="Country" required>
+</div>
+<br/>
 <div class="col-6">
     <button class="btn btn-primary mt-3" @onclick="RegisterUser">Register</button>
 </div>
@@ -23,6 +33,6 @@
     public async Task RegisterUser()
     {
         await _registerViewModel.RegisterUser();
-        _navigationManager.NavigateTo("/profile", true);
+       _navigationManager.NavigateTo("/login", true);
     }
 }

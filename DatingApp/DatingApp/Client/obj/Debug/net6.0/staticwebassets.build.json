@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m9EPbkkCB5fRP1iwdQm5z/bmjRHLuW73nKfBK5EglI8=",
+  "Hash": "qegYs5lBqtXWW+9KNUBqwDyJrmtQzZDnTf9AYCHou/A=",
   "Source": "DatingApp.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\chris\\.nuget\\packages\\blazored.toast\\4.1.0\\staticwebassets\\Blazored.Toast.bundle.scp.css",
+      "SourceId": "Blazored.Toast",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\chris\\.nuget\\packages\\blazored.toast\\4.1.0\\staticwebassets\\",
+      "BasePath": "_content/Blazored.Toast",
+      "RelativePath": "Blazored.Toast.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\blazored.toast\\4.1.0\\staticwebassets\\Blazored.Toast.bundle.scp.css"
+    },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "DatingApp.Client",
@@ -49,6 +66,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.13\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Toast.dll",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.Toast.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\blazored.toast\\4.1.0\\lib\\net6.0\\Blazored.Toast.dll"
     },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\DatingApp.Client.dll",
@@ -170,6 +204,23 @@
       "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.15\\runtimes\\browser-wasm\\native\\dotnet.wasm"
     },
     {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.15\\runtimes\\browser-wasm\\native\\icudt.dat"
+    },
+    {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "DatingApp.Client",
       "SourceType": "Computed",
@@ -219,23 +270,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.15\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "DatingApp.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\chris\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.15\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -6817,6 +6851,23 @@
       "OriginalItemSpec": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Linq.dll"
     },
     {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\build-gz\\Y8H7Deeb.gz",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.Toast.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Toast.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Blazored.Toast.dll"
+    },
+    {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\build-gz\\ya+L5Qby.gz",
       "SourceId": "DatingApp.Client",
       "SourceType": "Computed",
@@ -7072,40 +7123,6 @@
       "OriginalItemSpec": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DatingApp.Client.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\service-worker-assets.js",
-      "SourceId": "DatingApp.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker-assets.js",
-      "AssetKind": "Publish",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerManifest",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "obj\\Debug\\net6.0\\service-worker-assets.js"
-    },
-    {
-      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\service-worker-assets.js.build",
-      "SourceId": "DatingApp.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker-assets.js",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerManifest",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "obj\\Debug\\net6.0\\service-worker-assets.js.build"
-    },
-    {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\service-worker\\service-worker.js",
       "SourceId": "DatingApp.Client",
       "SourceType": "Computed",
@@ -7138,6 +7155,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\service-worker.published.js"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\service-worker-assets.js",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker-assets.js",
+      "AssetKind": "Publish",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerManifest",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "obj\\Debug\\net6.0\\service-worker-assets.js"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\obj\\Debug\\net6.0\\service-worker-assets.js.build",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker-assets.js",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerManifest",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "obj\\Debug\\net6.0\\service-worker-assets.js.build"
     },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\css\\app.css",
@@ -7189,23 +7240,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
-      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "DatingApp.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
@@ -7308,6 +7342,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "DatingApp.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\chris\\OneDrive\\Desktop\\DatingApp\\DatingApp\\DatingApp\\Client\\wwwroot\\css\\open-iconic\\ICON-LICENSE",

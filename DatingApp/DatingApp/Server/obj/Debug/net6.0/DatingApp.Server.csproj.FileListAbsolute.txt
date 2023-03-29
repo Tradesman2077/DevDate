@@ -98,3 +98,4 @@ C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Server\bin\Debug\n
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Server\bin\Debug\net6.0\Polly.dll
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Server\bin\Debug\net6.0\Polly.Extensions.Http.dll
 C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\chris\OneDrive\Desktop\DatingApp\DatingApp\DatingApp\Server\bin\Debug\net6.0\Blazored.Toast.dll
