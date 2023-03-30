@@ -69,7 +69,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-vPD\/Zp+kCuFusP1p4g3B22qr+YiIVJaDV+MfLrAp17o=",
+      "hash": "sha256-xjYRG7ZwaNa6jnRGnLaiL2JzVOnxAsoWdfPhxRITvGU=",
       "url": "DatingApp.Client.styles.css"
     },
     {
@@ -889,11 +889,11 @@
       "url": "_framework\/DatingApp.Shared.pdb"
     },
     {
-      "hash": "sha256-tA+oOUQsR6pvDNymU1\/SLttT9kpkaZjQNmE7rv+wjKc=",
+      "hash": "sha256-bt9NlaEK\/vMyTI+fTIWO7esJ7dhA5kWHTOFKqvVlRW0=",
       "url": "_framework\/DatingApp.Client.dll"
     },
     {
-      "hash": "sha256-+g9CL4LtdqLJFG4NcLUCMkaayX2xHIczHzUhF05H9dY=",
+      "hash": "sha256-r1uV6lBolU3cG\/B3ylGzkyRLPB4sv3LQydorKou1u4g=",
       "url": "_framework\/DatingApp.Client.pdb"
     },
     {
@@ -901,7 +901,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-oT3kNe2sa5a4P2BQbmjeobhXYNGhuGSXwK5weKc86e4=",
+      "hash": "sha256-l+Y\/c5Cl4eHdn8O\/3CEnhIEhbdkaiqHoMFWOwTNhKzM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -909,5 +909,5 @@
       "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "gPQsuWzY"
+  "version": "e0dhLbmE"
 };

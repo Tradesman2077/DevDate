@@ -7,7 +7,7 @@
 
 main[b-my5mfybw5q] {
     flex: 1;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:'Courier New', Courier, monospace;
 }
 
 .sidebar[b-my5mfybw5q] {
@@ -137,7 +137,10 @@ main[b-my5mfybw5q] {
     background-color: rgba(255,255,255,0.1);
     color: white;
 }
-
+.nameLog[b-ah7062ugz0]{
+    font-size: 1.5rem;
+    color: white !important;
+}
 @media (min-width: 641px) {
     .navbar-toggler[b-ah7062ugz0] {
         display: none;

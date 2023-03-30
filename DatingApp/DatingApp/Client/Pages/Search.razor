@@ -1,16 +1,16 @@
-﻿@page "/matches"
+﻿@page "/search"
 @using DatingApp.ViewModels
 @using DatingApp.Client.Models
 @using System.Security.Claims
 @inject HttpClient HttpClient
-@inject MatchesViewModel _matchesViewModel
+@inject SearchViewModel _searchViewModel
 @inject NavigationManager _navigationManager
 
-<h1>Your matches</h1>
-@if(_matchesViewModel.Matches != null || _matchesViewModel?.Matches.Count > 0){
-    @foreach (var match in _matchesViewModel.Matches)
+<h1>Suggestions</h1>
+@if( _searchViewModel?.Suggestions.Count > 0){
+    @foreach (var match in _searchViewModel.Suggestions)
 {
-
+System.Console.WriteLine(match.Email);
 <div class="row col-12">
     <div class="col-2">
         <img src= "@match.PhotoUrl" style="max-width: 100%; height: auto;">
@@ -21,7 +21,6 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@match.Username</h5>
-                <p class="card-text">@match.Email</p>
                 <p class="card-text">@match.Bio</p>
                 <p class="card-text">@match.Age</p>
                 <p class="card-text">@match.City</p>
@@ -30,9 +29,7 @@
         </div>
     </div>
     <div class="col-4">
-        <a href="" class="btn btn-secondary">Message</a>
-        <button  type="submit" @onclick="() => RemoveMatch(match.Id)" class="btn btn-danger">Remove from contacts</button>
-        <button type="submit" class=" btn btn-primary">View Profile</button>
+        <button  type="submit" @onclick="() => Like(match.Id)" class="btn btn-danger">Like</button>
     </div>
 </div>
 <br>
@@ -46,17 +43,21 @@
     {
         var authState = await authenticationState;
         var user = authState.User;
+
         if(user.Identity.IsAuthenticated)
         {
-            //ListOfMatches = await _matchesViewModel.GetMatches();
+
             var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            _matchesViewModel.Id = Convert.ToInt64(claim?.Value) ;
-            await _matchesViewModel.GetMatches();
+            _searchViewModel.Id = Convert.ToInt64(claim?.Value) ;
+            await _searchViewModel.GetSuggestions();
+            _navigationManager.NavigateTo("/search");
         }
         else _navigationManager.NavigateTo("/");        
     }
-    public async Task RemoveMatch( long matchId){
-        await _matchesViewModel.RemoveMatch(matchId);
-        _navigationManager.NavigateTo("/matches", forceLoad: true);
+    public async Task Like(long usrId)
+    {
+        await _searchViewModel.Like(usrId);
+        _navigationManager.NavigateTo("/search", forceLoad: true);
     }
+
 }

@@ -11,10 +11,7 @@
     <main>
         <AuthorizeView>
             <Authorized>
-                <div class="top-row">
-                    <h4><b>Logged in as : @context.User.Identity.Name</b></h4> &nbsp;
-                    <button class="btn btn-danger" @onclick="LogoutUser">Logout</button>
-                </div>
+
             </Authorized>
         </AuthorizeView>
         <article class="content px-4">
@@ -23,12 +20,5 @@
     </main>
 </div>
 @code {
-    private async Task LogoutUser()
-    {
-        await _httpClient.GetAsync("user/logoutuser");
-        _navigationManager.NavigateTo("/", true);
-    }
-
-
 
 }

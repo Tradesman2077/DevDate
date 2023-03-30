@@ -203,14 +203,14 @@
       "netstandard.dll": "sha256-REs1\/xYvAzuX2k2Y5p\/5IaM3O\/zaiYSW62pOQBGMrrA=",
       "System.Private.CoreLib.dll": "sha256-Bz7VnNtt03SzAvIN30yx1e25P6SfMdLYIaKIy7ASEnw=",
       "DatingApp.Shared.dll": "sha256-bL+nB0hzS0aALqJ5FcZERz5Ml\/VB9zx1O7TRZZItBTI=",
-      "DatingApp.Client.dll": "sha256-tA+oOUQsR6pvDNymU1\/SLttT9kpkaZjQNmE7rv+wjKc="
+      "DatingApp.Client.dll": "sha256-bt9NlaEK\/vMyTI+fTIWO7esJ7dhA5kWHTOFKqvVlRW0="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "DatingApp.Shared.pdb": "sha256-9ORwOAodpVW4aZpdE2gZKNpkNKhFGiTQF2nOGDL2QfQ=",
-      "DatingApp.Client.pdb": "sha256-+g9CL4LtdqLJFG4NcLUCMkaayX2xHIczHzUhF05H9dY="
+      "DatingApp.Client.pdb": "sha256-r1uV6lBolU3cG\/B3ylGzkyRLPB4sv3LQydorKou1u4g="
     },
     "runtime": {
       "dotnet.6.0.15.rlii27yqt0.js": "sha256-fb2wBZaRp096nChMG9nDNEcW0kW1whA\/kfQNyH+5QpQ=",
