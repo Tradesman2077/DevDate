@@ -22,7 +22,6 @@ main[b-my5mfybw5q] {
     display: flex;
     align-items: center;
 }
-
     .top-row[b-my5mfybw5q]  a, .top-row[b-my5mfybw5q]  .btn-link {
         white-space: nowrap;
         margin-left: 1.5rem;
@@ -138,7 +137,8 @@ main[b-my5mfybw5q] {
     color: white;
 }
 .nameLog[b-ah7062ugz0]{
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding-left: 1rem;
     color: white !important;
 }
 @media (min-width: 641px) {

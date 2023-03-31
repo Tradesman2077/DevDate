@@ -7,57 +7,63 @@
 @inject NavigationManager _navigationManager
 
 <h1>Suggestions</h1>
-@if( _searchViewModel?.Suggestions.Count > 0){
-    @foreach (var match in _searchViewModel.Suggestions)
+@if (_searchViewModel.Suggestions.Count == 0)
 {
-System.Console.WriteLine(match.Email);
-<div class="row col-12">
-    <div class="col-2">
-        <img src= "@match.PhotoUrl" style="max-width: 100%; height: auto;">
-        <br>
-    </div>
-    <br>
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@match.Username</h5>
-                <p class="card-text">@match.Bio</p>
-                <p class="card-text">@match.Age</p>
-                <p class="card-text">@match.City</p>
-                <p class="card-text">@match.Country</p>
+    <h1>Loading some people...</h1>
+}
+@if (_searchViewModel?.Suggestions.Count > 0)
+{
+    @foreach (var match in _searchViewModel.Suggestions)
+    {
+
+        <div class="row col-12">
+            <div class="col-2">
+                <img src="@match.PhotoUrl" style="max-width: 100%; height: auto;">
+                <br>
+            </div>
+            <br>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@match.Username</h5>
+                        <p class="card-text">@match.Bio</p>
+                        <p class="card-text">@match.Age</p>
+                        <p class="card-text">@match.City</p>
+                        <p class="card-text">@match.Country</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <button type="submit" @onclick="() => Like(match.Id)" class="btn btn-danger">Like</button>
             </div>
         </div>
-    </div>
-    <div class="col-4">
-        <button  type="submit" @onclick="() => Like(match.Id)" class="btn btn-danger">Like</button>
-    </div>
-</div>
-<br>
+        <br>
     }
 }
-@code 
+
+
+@code
 {
     [CascadingParameter]
-    public Task<AuthenticationState> authenticationState {get; set;}
+    public Task<AuthenticationState> authenticationState { get; set; }
     protected override async Task OnInitializedAsync()
     {
         var authState = await authenticationState;
         var user = authState.User;
 
-        if(user.Identity.IsAuthenticated)
+        if (user.Identity.IsAuthenticated)
         {
-
             var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            _searchViewModel.Id = Convert.ToInt64(claim?.Value) ;
+            _searchViewModel.Id = Convert.ToInt64(claim?.Value);
+            await _searchViewModel.GetUser();
             await _searchViewModel.GetSuggestions();
             _navigationManager.NavigateTo("/search");
         }
-        else _navigationManager.NavigateTo("/");        
+        else _navigationManager.NavigateTo("/");
     }
     public async Task Like(long usrId)
     {
         await _searchViewModel.Like(usrId);
         _navigationManager.NavigateTo("/search", forceLoad: true);
     }
-
 }

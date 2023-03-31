@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace DatingApp.Server.Controllers
 {
@@ -35,9 +32,9 @@ namespace DatingApp.Server.Controllers
             var likeList = Utility.GetStringAsList(currentUserToGetSuggestions.Likes);
             var users = _context.Users.ToList().Where(x => x.Id != userId);
 
-            foreach(var usr in users)
+            foreach (var usr in users)
             {
-                if(!matchList.Contains(usr.Id.ToString()) && !likeList.Contains(usr.Id.ToString()))
+                if (!matchList.Contains(usr.Id.ToString()) && !likeList.Contains(usr.Id.ToString()))
                 {
                     suggestions.Add(usr);
                 }
@@ -52,15 +49,16 @@ namespace DatingApp.Server.Controllers
         [HttpGet("getmatches/{userid}")]
         public async Task<List<User>> GetMatches(int userId)
         {
-            List<User>matches = new();
+            List<User> matches = new();
             User currentUserToGetMatches = await _context.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
 
-            if(currentUserToGetMatches.Matches.Length == 0)
+            if (currentUserToGetMatches.Matches.Length == 0)
             {
                 return matches;
             }
             var matchArr = Utility.GetStringAsList(currentUserToGetMatches.Matches);
-            foreach(string id in matchArr){
+            foreach (string id in matchArr)
+            {
                 var matchedUser = await _context.Users.Where(u => u.Id.ToString() == id).FirstOrDefaultAsync();
                 matches.Add(matchedUser);
             }
@@ -74,29 +72,29 @@ namespace DatingApp.Server.Controllers
             //remove from matches
             var matches = Utility.GetStringAsList(userToUpdate.Matches);
             matches.Remove(userId.ToString());
-            string matchString ="";
-            foreach(var match in matches)
+            string matchString = "";
+            foreach (var match in matches)
             {
-                matchString = matchString + match +',';
+                matchString = matchString + match + ',';
             }
             userToUpdate.Matches = matchString;
-            //remove form other users matches
+            //remove from other users matches
             var otherUserMatches = Utility.GetStringAsList(userToUnlike.Matches);
             otherUserMatches.Remove(user.Id.ToString());
-            string matchStringg ="";
-            foreach(var match in otherUserMatches)
+            string matchStringg = "";
+            foreach (var match in otherUserMatches)
             {
-                matchStringg = matchStringg + match +',';
+                matchStringg = matchStringg + match + ',';
             }
             userToUnlike.Matches = matchStringg;
 
             //remove from likes
             var likes = Utility.GetStringAsList(userToUpdate.Likes);
             likes.Remove(userId.ToString());
-            string likeString ="";
-            foreach(var like in likes)
+            string likeString = "";
+            foreach (var like in likes)
             {
-                likeString = likeString + like +',';
+                likeString = likeString + like + ',';
             }
             userToUpdate.Likes = likeString;
 
@@ -111,12 +109,12 @@ namespace DatingApp.Server.Controllers
             User likedUser = await _context.Users.Where(u => u.Id == userId).FirstOrDefaultAsync();
 
             var likes = Utility.GetStringAsList(userToUpdate.Likes);
-            
-            string likeString ="";
+
+            string likeString = "";
             likes.Add(userId.ToString());
-            foreach(var like in likes)
+            foreach (var like in likes)
             {
-                likeString = likeString + like +',';
+                likeString = likeString + like + ',';
             }
             userToUpdate.Likes = likeString;
 
@@ -124,7 +122,7 @@ namespace DatingApp.Server.Controllers
             var likedUserLikes = Utility.GetStringAsList(likedUser.Likes);
 
 
-            if(likedUserLikes.Contains(user.Id.ToString()))
+            if (likedUserLikes.Contains(user.Id.ToString()))
             {
                 // add match to both users
                 likedUser.Matches = likedUser.Matches + user.Id + ",";
@@ -153,7 +151,7 @@ namespace DatingApp.Server.Controllers
         {
             var encrytedPassword = Utility.Encrypt(user.Password);
             user.Password = encrytedPassword;
-            
+
             User loggedInUser = await _context.Users.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefaultAsync();
 
             if (loggedInUser != null)
@@ -173,7 +171,8 @@ namespace DatingApp.Server.Controllers
         public async Task<ActionResult<User>> GetCurrentUser()
         {
             User currentUser = new();
-            if(User.Identity.IsAuthenticated){
+            if (User.Identity.IsAuthenticated)
+            {
                 var userName = User.FindFirstValue(ClaimTypes.Name);
                 currentUser = await _context.Users.Where(u => u.Username == userName).FirstOrDefaultAsync();
             }
@@ -182,29 +181,29 @@ namespace DatingApp.Server.Controllers
         [HttpPost("registeruser")]
         public async Task<ActionResult<User>> RegisterUser([FromBody] User newUser)
         {
-           var encrytedPassword = Utility.Encrypt(newUser.Password);
-           User user = new();
+            var encrytedPassword = Utility.Encrypt(newUser.Password);
+            User user = new();
 
-           user.Password = encrytedPassword;
-           user.Email = newUser.Email;
-           user.Username = newUser.Username;
-           user.Bio = newUser.Bio;
-           user.Country = newUser.Country;
-           user.City = newUser.City;
-           user.FavouriteLanguage = newUser.FavouriteLanguage;
-           user.Matches = "";
-           user.Likes = "";
+            user.Password = encrytedPassword;
+            user.Email = newUser.Email;
+            user.Username = newUser.Username;
+            user.Bio = newUser.Bio;
+            user.Country = newUser.Country;
+            user.City = newUser.City;
+            user.FavouriteLanguage = newUser.FavouriteLanguage;
+            user.Matches = "";
+            user.Likes = "";
 
-           await _context.Users.AddAsync(user);
-           await _context.SaveChangesAsync();
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
 
-           return await Task.FromResult(user);
+            return await Task.FromResult(user);
         }
         [HttpGet("logoutuser")]
         public async Task<ActionResult<String>> LogOutUser()
         {
             await HttpContext.SignOutAsync();
             return "Success";
-        } 
+        }
     }
 }

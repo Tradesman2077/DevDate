@@ -7,55 +7,59 @@
 @inject NavigationManager _navigationManager
 
 <h1>Your matches</h1>
-@if(_matchesViewModel.Matches != null || _matchesViewModel?.Matches.Count > 0){
-    @foreach (var match in _matchesViewModel.Matches)
+@if (_matchesViewModel.Matches != null || _matchesViewModel?.Matches.Count > 0)
 {
+    @foreach (var match in _matchesViewModel.Matches)
+    {
 
-<div class="row col-12">
-    <div class="col-2">
-        <img src= "@match.PhotoUrl" style="max-width: 100%; height: auto;">
-        <br>
-    </div>
-    <br>
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@match.Username</h5>
-                <p class="card-text">@match.Email</p>
-                <p class="card-text">@match.Bio</p>
-                <p class="card-text">@match.Age</p>
-                <p class="card-text">@match.City</p>
-                <p class="card-text">@match.Country</p>
+        <div class="row col-12">
+            <div class="col-2">
+                <img src="@match.PhotoUrl" style="max-width: 100%; height: auto;">
+                <br>
+            </div>
+            <br>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@match.Username</h5>
+                        <p class="card-text">@match.Email</p>
+                        <p class="card-text">@match.Bio</p>
+                        <p class="card-text">@match.Age</p>
+                        <p class="card-text">@match.City</p>
+                        <p class="card-text">@match.Country</p>
+                        <p class="card-text">@match.FavouriteLanguage</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <a href="" class="btn btn-secondary">Message</a>
+                <button type="submit" @onclick="() => RemoveMatch(match.Id)" class="btn btn-danger">Remove from
+                    contacts</button>
+                <button type="submit" class=" btn btn-primary">View Profile</button>
             </div>
         </div>
-    </div>
-    <div class="col-4">
-        <a href="" class="btn btn-secondary">Message</a>
-        <button  type="submit" @onclick="() => RemoveMatch(match.Id)" class="btn btn-danger">Remove from contacts</button>
-        <button type="submit" class=" btn btn-primary">View Profile</button>
-    </div>
-</div>
-<br>
+        <br>
     }
 }
-@code 
+@code
 {
     [CascadingParameter]
-    public Task<AuthenticationState> authenticationState {get; set;}
+    public Task<AuthenticationState> authenticationState { get; set; }
     protected override async Task OnInitializedAsync()
     {
         var authState = await authenticationState;
         var user = authState.User;
-        if(user.Identity.IsAuthenticated)
+        if (user.Identity.IsAuthenticated)
         {
             //ListOfMatches = await _matchesViewModel.GetMatches();
             var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
-            _matchesViewModel.Id = Convert.ToInt64(claim?.Value) ;
+            _matchesViewModel.Id = Convert.ToInt64(claim?.Value);
             await _matchesViewModel.GetMatches();
         }
-        else _navigationManager.NavigateTo("/");        
+        else _navigationManager.NavigateTo("/");
     }
-    public async Task RemoveMatch( long matchId){
+    public async Task RemoveMatch(long matchId)
+    {
         await _matchesViewModel.RemoveMatch(matchId);
         _navigationManager.NavigateTo("/matches", forceLoad: true);
     }

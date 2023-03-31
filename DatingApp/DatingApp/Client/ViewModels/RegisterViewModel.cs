@@ -4,7 +4,8 @@ using DatingApp.Shared;
 
 namespace DatingApp.ViewModels
 {
-    public class RegisterViewModel {
+    public class RegisterViewModel
+    {
         public string Username { get; set; }
         public string Password { get; set; }
         public string ReenterPassword { get; set; }
@@ -19,18 +20,19 @@ namespace DatingApp.ViewModels
         private HttpClient _httpClient;
         public RegisterViewModel()
         {
-            
+
         }
-        public RegisterViewModel(HttpClient httpClient){
+        public RegisterViewModel(HttpClient httpClient)
+        {
             _httpClient = httpClient;
         }
 
         public async Task RegisterUser()
-        {   
+        {
             await _httpClient.PostAsJsonAsync<User>("user/registeruser", this);
-            
+
         }
-        public static implicit operator RegisterViewModel(User user )
+        public static implicit operator RegisterViewModel(User user)
         {
             return new RegisterViewModel
             {
@@ -45,7 +47,7 @@ namespace DatingApp.ViewModels
                 Bio = user.Bio
             };
         }
-        public static implicit operator User(RegisterViewModel registerViewModel )
+        public static implicit operator User(RegisterViewModel registerViewModel)
         {
             return new User
             {

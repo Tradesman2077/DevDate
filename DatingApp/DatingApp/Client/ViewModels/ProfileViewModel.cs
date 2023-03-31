@@ -3,7 +3,8 @@ using DatingApp.Shared;
 
 namespace DatingApp.ViewModels
 {
-    public class ProfileViewModel {
+    public class ProfileViewModel
+    {
         public long Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
@@ -12,14 +13,18 @@ namespace DatingApp.ViewModels
         public string Country { get; set; }
         public string PhotoUrl { get; set; }
         private HttpClient _httpClient;
-        public ProfileViewModel(){
+        public ProfileViewModel()
+        {
 
         }
-        public ProfileViewModel(HttpClient httpClient){
+        public ProfileViewModel(HttpClient httpClient)
+        {
             _httpClient = httpClient;
         }
-        public static implicit operator ProfileViewModel(User user){
-            return new ProfileViewModel{
+        public static implicit operator ProfileViewModel(User user)
+        {
+            return new ProfileViewModel
+            {
                 Username = user.Username,
                 Email = user.Email,
                 FavouriteLanguage = user.FavouriteLanguage,
@@ -30,8 +35,10 @@ namespace DatingApp.ViewModels
 
             };
         }
-        public static implicit operator User(ProfileViewModel user){
-            return new User{
+        public static implicit operator User(ProfileViewModel user)
+        {
+            return new User
+            {
                 Username = user.Username,
                 Email = user.Email,
                 FavouriteLanguage = user.FavouriteLanguage,
@@ -52,12 +59,13 @@ namespace DatingApp.ViewModels
             User? user = await _httpClient.GetFromJsonAsync<User>("user/getuser/" + this.Id);
             LoadUser(user);
         }
-        private void LoadUser(ProfileViewModel profileViewModel){
+        private void LoadUser(ProfileViewModel profileViewModel)
+        {
             this.Username = profileViewModel.Username;
             this.City = profileViewModel.City;
             this.FavouriteLanguage = profileViewModel.FavouriteLanguage;
             this.PhotoUrl = profileViewModel.PhotoUrl;
         }
     }
-    
+
 }

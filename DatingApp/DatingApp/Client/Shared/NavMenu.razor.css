@@ -52,7 +52,8 @@
     color: white;
 }
 .nameLog{
-    font-size: 1.5rem;
+    font-size: 1rem;
+    padding-left: 1rem;
     color: white !important;
 }
 @media (min-width: 641px) {

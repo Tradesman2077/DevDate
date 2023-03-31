@@ -8,7 +8,7 @@
 <div class="col-6">
     <input type="text" @bind="_loginViewModel.Username" class="form-control" placeholder="Username" required>
 </div>
-<br/>
+<br />
 <div class="col-6">
     <input type="password" @bind="_loginViewModel.Password" class="form-control" placeholder="Password" required>
 </div>
@@ -20,11 +20,11 @@
 </div>
 
 
-@code{
+@code {
     public async Task LoginUser()
     {
         await _loginViewModel.LoginUser();
-        
+
         _navigationManager.NavigateTo("/profile", true);
     }
 }

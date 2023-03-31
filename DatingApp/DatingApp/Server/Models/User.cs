@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DatingApp.Server.Models;
+﻿namespace DatingApp.Server.Models;
 
 public partial class User
 {
